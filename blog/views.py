@@ -6,3 +6,5 @@ def blog_view(requests):
     posts = Post.objects.filter(status=1)
     context = {'posts' : posts}
     return render(requests, 'blog/blog.html', context)
+
+
