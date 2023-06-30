@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% for published_post in published_posts %}
+        <p>{{ published_post.title }} : {{ published_post.published_date }} , status : {{ published_post.status }}</p>
+    {% endfor %}
+    <p>--------------------------------------------</p>
+    {% for unpublished_post in unpublished_posts %}
+        <p>{{ unpublished_post.title }} : {{ unpublished_post.published_date }} , status : {{ unpublished_post.status }}</p>
+    {% endfor %}
+</body>
+</html>
