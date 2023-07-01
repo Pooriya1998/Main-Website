@@ -16,8 +16,16 @@ def blog_view(requests):
             post.status = False
             post.save()
 
-    context = {'published_posts': published_posts, 'unpublished_posts' : unpublished_posts}
+    context = {'published_posts': published_posts, 'unpublished_posts': unpublished_posts}
     return render(requests, 'blog/blog.html', context)
+
+
+def blog_single_view(requests, pid):
+    post = get_object_or_404(Post, pk=pid)
+    post.counted_views += 1
+    post.save()
+    context = {'post': post}
+    return render(requests, 'blog/blog-single.html', context)
 
 
 def test_view(requests):
@@ -33,5 +41,5 @@ def test_view(requests):
             post.status = False
             post.save()
 
-    context = {'published_posts': published_posts, 'unpublished_posts' : unpublished_posts}
+    context = {'published_posts': published_posts, 'unpublished_posts': unpublished_posts}
     return render(requests, 'test.html', context)

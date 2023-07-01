@@ -42,18 +42,18 @@
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center justify-content-between">
-      <h1 class="logo"><a href="../">Cubic Hive</a></h1>
+      <h1 class="logo"><a {% url 'website:index' %}>Cubic Hive</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="blog.html" class="logo"><img src="{% static 'img/logo.png' %}" alt="" class="img-fluid"></a>-->
+      <!-- <a {% url 'blog:index' %} class="logo"><img src="{% static 'img/logo.png' %}" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto" href="../">Home</a></li>
-          <li><a class="nav-link scrollto" href="../#about">About</a></li>
-          <li><a class="nav-link scrollto" href="../#roadmap">Roadmap</a></li>
-          <li><a class="nav-link scrollto" href="../#team">Team</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'website:index' %}">Home</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'website:index' %}#about">About</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'website:index' %}#roadmap">Roadmap</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'website:index' %}#team">Team</a></li>
           <li><a class="nav-link scrollto" href="#blog">blog</a></li>
-          <li><a class="nav-link scrollto" href="../#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'website:index' %}#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -68,8 +68,8 @@
       <div class="container">
 
         <ol>
-          <li><a href="./">Home</a></li>
-          <li><a href="blog.html">Blog</a></li>
+          <li><a href="{% url 'website:index' %}">Home</a></li>
+          <li><a>Blog</a></li>
         </ol>
         <h2>Blog</h2>
 
@@ -92,15 +92,15 @@
                 </div>
 
                 <h2 class="entry-title">
-                  <a href="blog-single.html">{{ post.title }}</a>
+                  <a href="{% url 'blog:single' pid=post.id %}">{{ post.title }}</a>
                 </h2>
 
                 <div class="entry-meta">
                   <ul>
-                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-single.html">John Doe</a></li>
-                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a href="blog-single.html"><time datetime="{{ post.published_date }}">{{ post.published_date }}</time></a></li>
-                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="blog-single.html">{{ post.counted_views }} Views</a></li>
-                    <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a href="blog-single.html">12 Comments</a></li>
+                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a>John Doe</a></li>
+                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a><time datetime="{{ post.published_date }}">{{ post.published_date }}</time></a></li>
+                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a>{{ post.counted_views }} Views</a></li>
+                    <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a>12 Comments</a></li>
                   </ul>
                 </div>
 
@@ -109,7 +109,7 @@
                     {{ post.content }}
                   </p>
                   <div class="read-more">
-                    <a href="blog-single.html">Read More</a>
+                    <a href="{% url 'blog:single' pid=post.id %}">Read More</a>
                   </div>
                 </div>
 
@@ -154,31 +154,31 @@
               <div class="sidebar-item recent-posts">
                 <div class="post-item clearfix">
                   <img src="{% static 'img/blog/blog-recent-1.jpg' %}" alt="">
-                  <h4><a href="blog-single.html">Nihil blanditiis at in nihil autem</a></h4>
+                  <h4><a href="blog-single">Nihil blanditiis at in nihil autem</a></h4>
                   <time datetime="2020-01-01">Jan 1, 2020</time>
                 </div>
 
                 <div class="post-item clearfix">
                   <img src="{% static 'img/blog/blog-recent-2.jpg' %}" alt="">
-                  <h4><a href="blog-single.html">Quidem autem et impedit</a></h4>
+                  <h4><a href="blog-single">Quidem autem et impedit</a></h4>
                   <time datetime="2020-01-01">Jan 1, 2020</time>
                 </div>
 
                 <div class="post-item clearfix">
                   <img src="{% static 'img/blog/blog-recent-3.jpg' %}" alt="">
-                  <h4><a href="blog-single.html">Id quia et et ut maxime similique occaecati ut</a></h4>
+                  <h4><a href="blog-single">Id quia et et ut maxime similique occaecati ut</a></h4>
                   <time datetime="2020-01-01">Jan 1, 2020</time>
                 </div>
 
                 <div class="post-item clearfix">
                   <img src="{% static 'img/blog/blog-recent-4.jpg' %}" alt="">
-                  <h4><a href="blog-single.html">Laborum corporis quo dara net para</a></h4>
+                  <h4><a href="blog-single">Laborum corporis quo dara net para</a></h4>
                   <time datetime="2020-01-01">Jan 1, 2020</time>
                 </div>
 
                 <div class="post-item clearfix">
                   <img src="{% static 'img/blog/blog-recent-5.jpg' %}" alt="">
-                  <h4><a href="blog-single.html">Et dolores corrupti quae illo quod dolor</a></h4>
+                  <h4><a href="blog-single">Et dolores corrupti quae illo quod dolor</a></h4>
                   <time datetime="2020-01-01">Jan 1, 2020</time>
                 </div>
 
@@ -233,9 +233,9 @@
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#hero">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#about">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#roadmap">Roadmap</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'website:index' %}">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'website:index' %}#about">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'website:index' %}#roadmap">Roadmap</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
             </ul>
