@@ -39,6 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'website.apps.WebsiteConfig',
     'blog.apps.BlogConfig',
+    'Chat.apps.ChatConfig',
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -69,7 +71,8 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'main_website.wsgi.application'
+# WSGI_APPLICATION = 'main_website.wsgi.application'
+ASGI_APPLICATION = 'main_website.asgi.application'
 
 
 # Database
