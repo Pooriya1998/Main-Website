@@ -1,0 +1,5 @@
+Django==3.2.19
+asgiref
+pytz
+sqlparse
+pillow

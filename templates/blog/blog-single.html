@@ -89,7 +89,7 @@
             <article class="entry entry-single">
 
               <div class="entry-img">
-                <img src="{% static 'img/blog/blog-1.jpg' %}" alt="" class="img-fluid">
+                <img src="{{ post.image.url }}" alt="" class="img-fluid">
               </div>
 
               <h2 class="entry-title">
@@ -98,7 +98,7 @@
 
               <div class="entry-meta">
                 <ul>
-                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a>John Doe</a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a>{{ post.author.get_full_name }}</a></li>
                   <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a><time datetime="{{ post.published_date }}">{{ post.published_date }}</time></a></li>
                   <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a>{{ post.counted_views }} Views</a></li>
                   <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a>12 Comments</a></li>
@@ -130,7 +130,7 @@
             <div class="blog-author d-flex align-items-center">
               <img src="{% static 'img/blog/blog-author.jpg' %}" class="rounded-circle float-left" alt="">
               <div>
-                <h4>Jane Smith</h4>
+                <h4>{{ post.author.get_full_name }}</h4>
                 <div class="social-links">
                   <a href="https://twitters.com/#"><i class="bi bi-twitter"></i></a>
                   <a href="https://facebook.com/#"><i class="bi bi-facebook"></i></a>
@@ -282,12 +282,9 @@
               <h3 class="sidebar-title">Categories</h3>
               <div class="sidebar-item categories">
                 <ul>
-                  <li><a href="#">General <span>(25)</span></a></li>
-                  <li><a href="#">Lifestyle <span>(12)</span></a></li>
-                  <li><a href="#">Travel <span>(5)</span></a></li>
-                  <li><a href="#">Design <span>(22)</span></a></li>
-                  <li><a href="#">Creative <span>(8)</span></a></li>
-                  <li><a href="#">Educaion <span>(14)</span></a></li>
+                  {% for cat in all_cats %}
+                  <li><a href="#">{{ cat.name }} <span>(25)</span></a> </li>
+                  {% endfor %}
                 </ul>
               </div><!-- End sidebar categories-->
 
