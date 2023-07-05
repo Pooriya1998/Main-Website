@@ -70,10 +70,10 @@
         <ol>
           <li><a href="{% url 'website:index' %}">Home</a></li>
           <li><a href="./">Blog</a></li>
-          <li>{{ post.title }}</li>
+          <li>{{post.title}}</li>
         </ol>
         <br />
-        <h2>{{ post.title }}</h2>
+        <h2>{{post.title}}</h2>
 
       </div>
     </section><!-- End Breadcrumbs -->
@@ -93,21 +93,21 @@
               </div>
 
               <h2 class="entry-title">
-                <a href="{% url 'blog:single' pid=post.id %}">{{ post.title }}</a>
+                <a href="{% url 'blog:single' pid=post.id %}">{{post.title}}</a>
               </h2>
 
               <div class="entry-meta">
                 <ul>
-                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a>{{ post.author.get_full_name }}</a></li>
-                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a><time datetime="{{ post.published_date }}">{{ post.published_date }}</time></a></li>
-                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a>{{ post.counted_views }} Views</a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a>{{post.author.get_full_name}}</a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a><time datetime="{{post.published_date}}">{{post.published_date|date:"d M Y"}}</time></a></li>
+                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a>{{post.counted_views}} Views</a></li>
                   <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a>12 Comments</a></li>
                 </ul>
               </div>
 
               <div class="entry-content">
                 <p>
-                  {{ post.content }}
+                  {{post.content}}
                 <img src="{% static 'img/blog/blog-inside-post.jpg' %}" class="img-fluid" alt="">
               </div>
 
@@ -129,20 +129,7 @@
             
             </article><!-- End blog entry -->
 
-            <div class="blog-author d-flex align-items-center">
-              <img src="{% static 'img/blog/blog-author.jpg' %}" class="rounded-circle float-left" alt="">
-              <div>
-                <h4>{{ post.author.get_full_name }}</h4>
-                <div class="social-links">
-                  <a href="https://twitters.com/#"><i class="bi bi-twitter"></i></a>
-                  <a href="https://facebook.com/#"><i class="bi bi-facebook"></i></a>
-                  <a href="https://instagram.com/#"><i class="biu bi-instagram"></i></a>
-                </div>
-                <p>
-                  Itaque quidem optio quia voluptatibus dolorem dolor. Modi eum sed possimus accusantium. Quas repellat voluptatem officia numquam sint aspernatur voluptas. Esse et accusantium ut unde voluptas.
-                </p>
-              </div>
-            </div><!-- End blog author bio -->
+            {% include 'blog/blog-writter.html' %}
 
             <div class="blog-comments">
 
@@ -285,7 +272,7 @@
               <div class="sidebar-item categories">
                 <ul>
                   {% for cat in all_cats %}
-                  <li><a href="#">{{ cat.name }} <span>(25)</span></a> </li>
+                  <li><a href="#">{{cat.name}} <span>(25)</span></a> </li>
                   {% endfor %}
                 </ul>
               </div><!-- End sidebar categories-->

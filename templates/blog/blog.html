@@ -88,25 +88,25 @@
             {% for post in published_posts %}
               <article class="entry">
                 <div class="entry-img">
-                  <img src="{{ post.image.url }}" alt="" class="img-fluid">
+                  <img src="{{post.image.url}}" alt="" class="img-fluid">
                 </div>
 
                 <h2 class="entry-title">
-                  <a href="{% url 'blog:single' pid=post.id %}">{{ post.title }}</a>
+                  <a href="{% url 'blog:single' pid=post.id %}">{{post.title}}</a>
                 </h2>
 
                 <div class="entry-meta">
                   <ul>
-                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a>{{ post.author.get_full_name }}</a></li>
-                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a><time datetime="{{ post.published_date }}">{{ post.published_date }}</time></a></li>
-                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a>{{ post.counted_views }} Views</a></li>
+                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a>{{post.author.get_full_name}}</a></li>
+                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> <a><time datetime="{{post.published_date}}">{{post.published_date|date:"d M Y"}}</time></a></li>
+                    <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a>{{post.counted_views}} Views</a></li>
                     <li class="d-flex align-items-center"><i class="bi bi-chat-dots"></i> <a>12 Comments</a></li>
                   </ul>
                 </div>
 
                 <div class="entry-content">
                   <p>
-                    {{ post.content }}
+                    {{post.content|truncatewords:50}}
                   </p>
                   <div class="read-more">
                     <a href="{% url 'blog:single' pid=post.id %}">Read More</a>
@@ -142,7 +142,7 @@
               <div class="sidebar-item categories">
                 <ul>
                   {% for cat in all_cats %}
-                  <li><a href="#">{{ cat.name }} <span>(25)</span></a> </li>
+                  <li><a href="#">{{cat.name}} <span>(25)</span></a> </li>
                   {% endfor %}
                 </ul>
               </div><!-- End sidebar categories-->
