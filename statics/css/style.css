@@ -1618,6 +1618,82 @@ section {
   font-size: 14px;
 }
 
+.blog .navigation-area {
+  border-top: 1px solid #eee;
+  padding-top: 30px;
+}
+
+.blog .navigation-area .nav-left {
+  text-align: left;
+}
+
+.blog .navigation-area .nav-left .thumb {
+  margin-right: 20px;
+  background: #000;
+}
+
+.blog .navigation-area .nav-left .thumb img {
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.blog .navigation-area .nav-left .lnr {
+  margin-left: 20px;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.blog .navigation-area .nav-left:hover .lnr {
+  opacity: 1;
+}
+
+.blog .navigation-area .nav-left:hover .thumb img {
+  opacity: .5;
+}
+
+@media (max-width: 767px) {
+  .blog .navigation-area .nav-left {
+    margin-bottom: 30px;
+  }
+}
+
+.blog .navigation-area .nav-right {
+  text-align: right;
+}
+
+.blog .navigation-area .nav-right .thumb {
+  margin-left: 20px;
+  background: #000;
+}
+
+.blog .navigation-area .nav-right .thumb img {
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.blog .navigation-area .nav-right .lnr {
+  margin-right: 20px;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease 0s;
+  -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+}
+
+.blog .navigation-area .nav-right:hover .lnr {
+  opacity: 1;
+}
+
+.blog .navigation-area .nav-right:hover .thumb img {
+  opacity: .5;
+}
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/

@@ -112,10 +112,12 @@
               </div>
 
               <div class="entry-footer">
-                <i class="bi bi-folder"></i>
-                <ul class="cats">
-                  <li><a href="#">Business</a></li>
-                </ul>
+                {% for cat in post.category.all %}
+                  <i class="bi bi-folder"></i>
+                  <ul class="cats">
+                    <li><a href="#">{{cat.name}}</a></li>
+                  </ul>
+                {% endfor %}
 
                 <i class="bi bi-tags"></i>
                 <ul class="tags">
@@ -124,7 +126,7 @@
                   <li><a href="#">Marketing</a></li>
                 </ul>
               </div>
-
+            
             </article><!-- End blog entry -->
 
             <div class="blog-author d-flex align-items-center">
