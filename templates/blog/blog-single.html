@@ -116,7 +116,7 @@
                 {% for cat in post.category.all %}
                   <i class="bi bi-folder"></i>
                   <ul class="cats">
-                    <li><a href="#">{{cat.name}}</a></li>
+                    <li><a href="{% url 'blog:category' cat_name=cat.name %}">{{cat.name}}</a></li>
                   </ul>
                 {% endfor %}
 
@@ -270,47 +270,12 @@
               </div><!-- End sidebar search formn-->
 
               <h3 class="sidebar-title">Categories</h3>
-              <div class="sidebar-item categories">
-                <ul>
-                  {% for cat in all_cats %}
-                  <li><a href="#">{{cat.name}} <span>(25)</span></a> </li>
-                  {% endfor %}
-                </ul>
-              </div><!-- End sidebar categories-->
+
+              {% postcategories %}
 
               <h3 class="sidebar-title">Recent Posts</h3>
-              <div class="sidebar-item recent-posts">
-                <div class="post-item clearfix">
-                  <img src="{% static 'img/blog/blog-recent-1.jpg' %}" alt="">
-                  <h4><a href="blog-single">Nihil blanditiis at in nihil autem</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="{% static 'img/blog/blog-recent-2.jpg' %}" alt="">
-                  <h4><a href="blog-single">Quidem autem et impedit</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="{% static 'img/blog/blog-recent-3.jpg' %}" alt="">
-                  <h4><a href="blog-single">Id quia et et ut maxime similique occaecati ut</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="{% static 'img/blog/blog-recent-4.jpg' %}" alt="">
-                  <h4><a href="blog-single">Laborum corporis quo dara net para</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-                <div class="post-item clearfix">
-                  <img src="{% static 'img/blog/blog-recent-5.jpg' %}" alt="">
-                  <h4><a href="blog-single">Et dolores corrupti quae illo quod dolor</a></h4>
-                  <time datetime="2020-01-01">Jan 1, 2020</time>
-                </div>
-
-              </div><!-- End sidebar recent posts-->
+              
+              {% lastestposts %}
 
               <h3 class="sidebar-title">Tags</h3>
               <div class="sidebar-item tags">
