@@ -44,7 +44,19 @@
 
   <main id="main">
 
-  {% include 'blog/blog-breadcrumbs.html' %}
+    <!-- ======= Breadcrumbs ======= -->
+    <section id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+
+            <ol>
+              <li><a href="{% url 'website:index' %}">Home</a></li>
+              <li><a href="{% url 'blog:index' %}">Blog</a></li>
+            </ol>
+            <br />
+            <h2>Blog</h2>
+
+        </div>
+    </section><!-- End Breadcrumbs -->
 
   {% include 'blog/blog-blog-section.html' %}
 

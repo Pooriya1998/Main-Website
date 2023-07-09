@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from blog.models import Post, Category
+from blog.Management import check_status
 import datetime
 
 
@@ -9,15 +10,9 @@ def blog_view(request):
     unpublished_posts = Post.objects.filter(published_date__gt=datetime.datetime.now())
     all_cats = Category.objects.all()
 
-    for post in all_posts:
-        if post in published_posts:
-            post.status = True
-            post.save()
-        else:
-            post.status = False
-            post.save()
+    check_status()
 
-    context = {'published_posts': published_posts, 'unpublished_posts': unpublished_posts, 'all_cats': all_cats}
+    context = {'published_posts': published_posts, 'unpublished_posts': unpublished_posts, 'all_posts': all_posts, 'all_cats': all_cats}
     return render(request, 'blog/blog.html', context)
 
 
