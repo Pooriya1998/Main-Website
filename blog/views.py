@@ -1,4 +1,4 @@
-from blog.Management import *
+from blog.management import *
 import datetime
 
 
