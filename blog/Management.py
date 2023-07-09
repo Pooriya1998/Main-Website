@@ -14,3 +14,9 @@ def check_status():
         else:
             post.status = False
             post.save()
+
+
+def add_counted_views(pid):
+    post = get_object_or_404(Post, pk=pid, status=1)
+    post.counted_views += 1
+    post.save()
