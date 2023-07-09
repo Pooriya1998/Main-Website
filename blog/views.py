@@ -6,12 +6,10 @@ def blog_view(request):
 
     check_status()
 
-    all_posts = Post.objects.all()
     published_posts = Post.objects.exclude(published_date__gt=datetime.datetime.now())
-    unpublished_posts = Post.objects.filter(published_date__gt=datetime.datetime.now())
     all_cats = Category.objects.all()
 
-    context = {'published_posts': published_posts, 'unpublished_posts': unpublished_posts, 'all_posts': all_posts, 'all_cats': all_cats}
+    context = {'posts': published_posts, 'all_cats': all_cats}
     return render(request, 'blog/blog.html', context)
 
 
