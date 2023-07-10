@@ -1621,6 +1621,10 @@ section {
   font-size: 14px;
 }
 
+.blog .thumb .overlay-bg {
+  background: rgba(0, 0, 0, 0.8);
+}
+
 .blog .navigation-area {
   border-top: 1px solid #eee;
   padding-top: 30px;
