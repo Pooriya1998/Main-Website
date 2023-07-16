@@ -3,3 +3,4 @@ asgiref
 pytz
 sqlparse
 pillow
+channels==4.0.0
