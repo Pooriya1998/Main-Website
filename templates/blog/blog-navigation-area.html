@@ -2,24 +2,24 @@
 <div class="navigation-area">
     <div class="row">
         <div class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
-            {% if has_next_post == 1 %}
+            {% if has_previous_post == 1 %}
             <div class="thumb">
-                <a href="#"><img width="80px" height="80px" src="{{next_post.image.url}}" alt=""></a>
+                <a href="#"><img width="80px" height="80px" src="{{previous_post.image.url}}" alt=""></a>
             </div>
                 <div class="detials">
-                    <p>Next Post</p>
-                    <a href="{% url 'blog:single' pid=next_post.id %}"><h8>{{next_post.title}}</h8></a>
+                    <p>Prev Post</p>
+                    <a href="{% url 'blog:single' pid=previous_post.id %}"><h8>{{previous_post.title}}</h8></a>
                 </div>
             {% endif %}
         </div>
         <div class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
-            {% if has_previous_post == 1 %}
+            {% if has_next_post == 1 %}
             <div class="detials">
-                <p>Prev Post</p>
-                <a href="{% url 'blog:single' pid=previous_post.id %}"><h8>{{previous_post.title}}</h8></a>
+                <p>Next Post</p>
+                <a href="{% url 'blog:single' pid=next_post.id %}"><h8>{{next_post.title}}</h8></a>
             </div>
             <div class="thumb">
-                <a href="#"><img width="80px" height="80px" src="{{previous_post.image.url}}" alt=""></a>
+                <a href="#"><img width="80px" height="80px" src="{{next_post.image.url}}" alt=""></a>
             </div>
             {% endif %}
         </div>									
