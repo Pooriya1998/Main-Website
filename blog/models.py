@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.conf import settings
 
 
 class Category(models.Model):
@@ -10,7 +11,7 @@ class Category(models.Model):
     
 
 class Post(models.Model):
-    author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, null=True)
     image = models.ImageField(upload_to='blog/', default='blog/default.jpg')
     title = models.CharField(max_length=255)
     content = models.TextField()
