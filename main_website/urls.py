@@ -24,6 +24,7 @@ urlpatterns = [
     path('', include('website.urls')),
     path('blog/', include('blog.urls')),
     path('chat/', include('Chat.urls')),
+    path('accounts/', include('accounts.urls')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
