@@ -2,19 +2,31 @@
 <!-- ======= Header ======= -->
 <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center justify-content-between">
-        <h1 class="logo"><a {% url 'website:index' %}>Cubic Hive</a></h1>
-        <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a {% url 'blog:index' %} class="logo"><img src="{% static 'img/logo.png' %}" alt="" class="img-fluid"></a>-->
+      <h1 class="logo"><a href="{% url 'website:index' %}">Cubic Hive</a></h1>
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="{% static 'img/logo.png' %}" alt="" class="img-fluid"></a>-->
 
-        <nav id="navbar" class="navbar"><ul>
-            <li><a class="nav-link scrollto" href="{% url 'website:index' %}">Home</a></li>
-            <li><a class="nav-link scrollto" href="{% url 'website:index' %}#about">About</a></li>
-            <li><a class="nav-link scrollto" href="{% url 'website:index' %}#roadmap">Roadmap</a></li>
-            <li><a class="nav-link scrollto" href="{% url 'website:index' %}#team">Team</a></li>
-            <li><a class="nav-link scrollto" href="{% url 'blog:index' %}">blog</a></li>
-            <li><a class="nav-link scrollto" href="{% url 'website:index' %}#contact">Contact</a></li>
-        </ul><i class="bi bi-list mobile-nav-toggle"></i>
-        </nav><!-- .navbar -->
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="{% url 'website:index' %}">Home</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'website:index' %}#about">About</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'website:index' %}#roadmap">Roadmap</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'website:index' %}#team">Team</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'blog:index' %}">blog</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'website:index' %}#contact">Contact</a></li>
+        </ul>
+        <ul>
+          {% if request.user.is_authenticated %}
+            <li><a href="#">Logged in as {{request.user.username}}</a></li>
+            <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
+          {% else %}
+            <li><a href="{% url 'accounts:login' %}">Login</a></li>
+            <li><a href="{% url 'accounts:signup' %}">Signup</a></li>
+          {% endif %}
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
 
     </div>
-</header><!-- End Header --
+  </header><!-- End Header -->
