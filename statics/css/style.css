@@ -979,7 +979,7 @@ section {
   font-weight: 600;
 }
 
-.contact .php-email-form .error-message br+br {
+.contact .error-message br+br {
   margin-top: 25px;
 }
 

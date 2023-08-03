@@ -52,7 +52,7 @@
           <li><a class="nav-link scrollto" href="#roadmap">Roadmap</a></li>
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
           <li><a class="nav-link scrollto" href="{% url 'blog:index' %}">blog</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'website:contact' %}">Contact</a></li>
         </ul>
         <ul>
           {% if request.user.is_authenticated %}

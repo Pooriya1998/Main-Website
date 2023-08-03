@@ -13,7 +13,7 @@
           <li><a class="nav-link scrollto" href="{% url 'website:index' %}#roadmap">Roadmap</a></li>
           <li><a class="nav-link scrollto" href="{% url 'website:index' %}#team">Team</a></li>
           <li><a class="nav-link scrollto" href="{% url 'blog:index' %}">blog</a></li>
-          <li><a class="nav-link scrollto" href="{% url 'website:index' %}#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'website:contact' %}>Contact</a></li>
         </ul>
         <ul>
           {% if request.user.is_authenticated %}
