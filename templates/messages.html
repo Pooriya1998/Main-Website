@@ -1,7 +1,12 @@
 {% load static %}
 {% if messages %}
     {% for message in messages %}
-      <div class="alert {% if message.tags %} alert-{{ message.tags }}{% endif %}">{{ message|safe }}</div>
+      <div class="alert {% if message.tags %} alert-{{ message.tags }}{% endif %}">
+        {{ message|safe }}
+        <script>
+	        swal("{{ message|safe }}");
+	    </script>
+      </div>
     {% endfor %}
   {% endif %}
 
@@ -12,7 +17,12 @@
         {% for field in form %}
           {% if field.errors %}
             {% for error in field.errors %}
-              <li><a href="#id_{{ field.name }}" class="error">{{ error|escape }}</a></li>
+              <li><a href="#id_{{ field.name }}" class="error">
+                <script>
+                {{ error|escape }}
+			      swal("{{ error|escape }}");
+		        </script>
+              </a></li>
             {% endfor %}
           {% endif %}
         {% endfor %}
