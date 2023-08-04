@@ -1,3 +1,5 @@
+import time
+
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
@@ -18,11 +20,14 @@ def login_view(request):
                 user = authenticate(request, username=username, password=password)
                 if user is not None:
                     login(request, user)
-                    if 'next' in request.POST:
-                        return redirect(request.POST.get('next'))
-                    else:
-                        return redirect('/')
-
+                    messages.add_message(request, messages.SUCCESS, 'seccess')
+                    if request.user.is_authenticated:
+                        if 'next' in request.POST:
+                            return redirect(request.POST.get('next'))
+                        else:
+                            return redirect('/')
+            else:
+                messages.add_message(request, messages.ERROR,'Your username or password is incorrect')
     else:
         return redirect('/')
 

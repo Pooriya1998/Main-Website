@@ -3,9 +3,6 @@
     {% for message in messages %}
       <div class="alert {% if message.tags %} alert-{{ message.tags }}{% endif %}">
         {{ message|safe }}
-        <script>
-	        swal("{{ message|safe }}");
-	    </script>
       </div>
     {% endfor %}
   {% endif %}
@@ -18,10 +15,7 @@
           {% if field.errors %}
             {% for error in field.errors %}
               <li><a href="#id_{{ field.name }}" class="error">
-                <script>
                 {{ error|escape }}
-			      swal("{{ error|escape }}");
-		        </script>
               </a></li>
             {% endfor %}
           {% endif %}

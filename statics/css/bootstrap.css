@@ -244,6 +244,11 @@ img {
   border-style: none;
 }
 
+.cubic{
+    padding:100px;
+
+}
+
 svg:not(:root) {
   overflow: hidden;
 }

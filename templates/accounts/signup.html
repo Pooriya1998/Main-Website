@@ -17,6 +17,7 @@
   </head>
 
   <body class="text-center">
+    <div class="cubic"><img class="mb-4" src="{% static 'img/icon.png' %}" alt="" width="360" height="360"><br><h1>Cubic Hive</h1></div>
     <form class="form-signup" method="post" action="{% url 'accounts:signup' %}">
       {% csrf_token %}
       <h1 class="h3 mb-3 font-weight-normal">Please Sign Up</h1>
@@ -42,7 +43,7 @@
       <button class="btn btn-lg btn-primary btn-block" type="submit">Sign Up</button>
       <br />
       <a href="{% url 'accounts:login' %}">Login</a>
-      <p class="mt-5 mb-3 text-muted">&copy; 2023</p>
+      <p class="mt-5 mb-3 text-muted">&copy; CubicHive 2023</p>
     </form>
   </body>
 </html>
