@@ -11,6 +11,8 @@ def blog_view(request, **kwargs):
     posts = Post.objects.exclude(published_date__gt=datetime.datetime.now())
     if kwargs.get('cat_name') is not None:
         posts = posts.filter(category__name=kwargs['cat_name'])
+    if kwargs.get('tag_name') is not None:
+        posts = posts.filter(tag__name__in=[kwargs['tag_name']])
     if kwargs.get('author_username') is not None:
         posts = posts.filter(author__username=kwargs['author_username'])
     posts = Paginator(posts, 3)

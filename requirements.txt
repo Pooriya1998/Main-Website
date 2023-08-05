@@ -4,3 +4,4 @@ pytz
 sqlparse
 pillow
 channels==4.0.0
+django-extensions

@@ -20,6 +20,14 @@
 
               {% lastestposts %}
 
+              <h3 class="sidebar-title">Tags</h3>
+              <div class="sidebar-item tags">
+                <ul>
+                  {% for tag in post.tag.all %}
+                  <li><a href="{% url 'blog:tag' tag_name=tag.name %}">{{tag.name}}</a></li>
+                  {% endfor %}
+                </ul>
+              </div><!-- End sidebar tags-->
 
             </div><!-- End sidebar -->
 
