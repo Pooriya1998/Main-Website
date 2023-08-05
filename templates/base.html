@@ -54,12 +54,12 @@
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
           <li><a class="nav-link scrollto" href="{% url 'blog:index' %}">blog</a></li>
           <li><a class="nav-link scrollto" href="{% url 'website:contact' %}">Contact</a></li>
-        </ul>
-        <ul>
+          <li><a></a></li>
           {% if request.user.is_authenticated %}
             <li><a href="#">Logged in as {{request.user.username}}</a></li>
             <li><a href="{% url 'accounts:logout' %}">Logout</a></li>
           {% else %}
+            <li><a></a></li><li><a></a></li><li><a></a></li><li><a></a></li>
             <li><a href="{% url 'accounts:login' %}">Login</a></li>
             <li><a href="{% url 'accounts:signup' %}">Signup</a></li>
           {% endif %}
