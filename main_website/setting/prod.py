@@ -7,9 +7,9 @@ from main_website.settings import *
 SECRET_KEY = 'django-insecure-sw4t@-i60=)@*94mcxh#3@ni%62$kqgy=^fy8k6t$a32waa%)('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ['cubichive.ir', 'www.cubichive.ir']
+ALLOWED_HOSTS = ['cubichive.ir', 'www.cubichive.ir', '127.0.0.1']
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases

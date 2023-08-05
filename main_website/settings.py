@@ -30,7 +30,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'Chat.apps.ChatConfig',
     'accounts',
-    'channels',
+    #'channels',
     'django.contrib.humanize',
     'django_extensions',
     'django.contrib.sites',
@@ -73,8 +73,8 @@ TEMPLATES = [
     },
 ]
 
-# WSGI_APPLICATION = 'main_website.wsgi.application'
-ASGI_APPLICATION = 'main_website.asgi.application'
+WSGI_APPLICATION = 'main_website.wsgi.application'
+# ASGI_APPLICATION = 'main_website.asgi.application'
 
 
 # Password validation

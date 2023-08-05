@@ -1,5 +1,4 @@
 from main_website.settings import *
-from main_website.secretkeys import secret
 
 # Quick-start development setting - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -53,5 +52,5 @@ EMAIL_HOST = "smtp.gmail.com"
 EMAIL_POST = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = "po.rahimzade00@gmail.com" # An email to send a message
-EMAIL_HOST_PASSWORD = secret() # Email password
+EMAIL_HOST_PASSWORD = "" # Email password
 
