@@ -3,7 +3,7 @@ from channels.routing import ProtocolTypeRouter
 from django.core.asgi import get_asgi_application
 
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'main_website.setting')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'main_website.setting.prod')
 
 application = ProtocolTypeRouter({
 

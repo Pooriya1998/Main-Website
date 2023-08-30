@@ -3,5 +3,14 @@ asgiref
 pytz
 sqlparse
 pillow
+django-extensions==3.2.3
+django-robots==5.0
+django-debug-toolbar==4.1.0
+django-taggit==4.0.0
+webencodings==0.5.1
+bleach==6.0.0
+django-summernote==0.8.20.0
+django-ranged-response==0.2.0
+django-simple-captcha==0.5.18
+django-multi-captcha-admin==2.0.0
 channels==4.0.0
-django-extensions

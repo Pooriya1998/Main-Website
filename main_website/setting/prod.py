@@ -36,4 +36,4 @@ STATICFILES_DIRS = [
     BASE_DIR / "statics",
 ]
 
-CSRF_COOKIE_SECURE = True
+#CSRF_COOKIE_SECURE = True
